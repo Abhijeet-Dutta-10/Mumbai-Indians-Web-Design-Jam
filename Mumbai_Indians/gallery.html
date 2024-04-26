@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery</title>
+<link rel="icon" type="image/png" href="Photos/images/milogo.png">
+<style>
+  body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .photo {
+    width: 30%; /* Adjust as needed */
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.5); /* Blue background */
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 768px) {
+    .photo {
+      width: 45%; /* Adjust for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .photo {
+      width: 100%; /* Adjust for mobile screens */
+    }
+  }
+
+  .button {
+  position: relative;
+  border: none;
+  background: transparent;
+  --stroke-color: #ffffff7c;
+  --ani-color: rgba(95, 3, 244, 0);
+  --color-gar: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+  letter-spacing: 3px;
+  font-size: 2em;
+  font-family: "Arial";
+  text-transform: uppercase;
+  color: blue;
+  -webkit-text-stroke: 1px var(--stroke-color);
+  cursor: pointer;
+}
+
+.front-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  background: var(--color-gar);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200%;
+  overflow: hidden;
+  transition: all 1s;
+  animation: 8s ani infinite;
+  border-bottom: 2px solid transparent;
+}
+
+.button:hover .front-text {
+  width: 100%;
+  border-bottom: 2px solid #03a9f4;
+  -webkit-text-stroke: 1px var(--ani-color);
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 400%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+
+
+.animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: ;
+  border-radius: 100px;
+  font-weight: 600;
+  color: #1f387e;
+  box-shadow: 0 0 0 2px #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: #1f387e;
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #c5e5e4;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: #1f387e;
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px greenyellow;
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+</style>
+</head>
+<body>
+  <form onclick="Mumbai.html" action="Mumbai.html">
+<br>
+  <center><button class="button" data-text="Awesome">
+    <span class="actual-text">&nbsp;GALLERY&nbsp;</span>
+    <span aria-hidden="true" class="front-text">&nbsp;GALLERY&nbsp;</span>
+</button></center><br>
+<div class="gallery">
+  <div class="photo">
+    <img src="Photos/gal1.jpg" alt="Photo 1">
+    <div class="caption">19 APR , 2024<p>IPL 2024: Punjab Kings VS Mumbai Indians - Match Album</p></div>
+  </div>
+  <div class="photo">
+    <img src="Photos/gal2.jpg" alt="Photo 2">
+    <div class="caption">18 APR , 2024<p>IPL 2024: Final Practice for PBKS VS MI</p></div>
+  </div>
+  <div class="photo">
+    <img src="Photos/gal3.jpg" alt="Photo 3">
+    <div class="caption">17 APR , 2024<p>IPL 2024: Touchdown Punjab and getting ready - PBKS VS MI</p></div>
+  </div>
+  <div class="photo">
+    <img src="Photos/gal4.jpg" alt="Photo 4">
+    <div class="caption">07 APR , 2024<p>IPL 2024: MI VS DC :Final Stretch</p></div>
+  </div>
+  <div class="photo">
+    <img src="Photos/gal5.jpg" alt="Photo 5">
+    <div class="caption">26 MAR , 2024<p>Holi and TouchDown Hyderabad</p></div>
+  </div>
+  <div class="photo">
+    <img src="Photos/gal6.jpg"" alt="Photo 6">
+    <div class="caption">15 MAR, 2024<p>IPL 2024: Rod to #6 IPL Trophy</p></div>
+  </div>
+</div>
+<p></p>
+<center>
+<button class="animated-button">
+  <svg xmlns="http://www.w3.org/2000/svg" class="arr-2" viewBox="0 0 24 24">
+    <path
+      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+    ></path>
+  </svg>
+  <span class="text">L O A D - M O R E</span>
+  <span class="circle"></span>
+  <svg xmlns="http://www.w3.org/2000/svg" class="arr-1" viewBox="0 0 24 24">
+    <path
+      d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+    ></path>
+  </svg>
+</button>
+</center>
+</form>
+</body>
+</html>
